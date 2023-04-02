@@ -1,0 +1,883 @@
+{
+  "version": "13",
+  "site": "https://textit.com",
+  "flows": [
+    {
+      "name": "GigGo",
+      "uuid": "732c602e-0780-4c29-8b34-8ab8a348ce2d",
+      "spec_version": "13.2.0",
+      "language": "eng",
+      "type": "messaging",
+      "nodes": [
+        {
+          "uuid": "80c850e0-566f-4c7e-90ef-1be817d92eba",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Habari! Je wewe ni mwajiri wa sekta isiyo rasmi unayetafuta wafanyakazi wenye ujuzi na wa kuaminika? Au wewe ni mfanyakazi wa sekta isiyo rasmi unayetafuta fursa mpya za ajira? Umefika mahali sahihi! Tuko hapa kuunganisha waajiri na wafanyakazi katika sekta isiyo rasmi. ",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "07aea060-99c3-41ae-be1d-26b5582e64f2"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "8fee27b8-c483-4e84-8e6f-9682067f6ab8",
+              "destination_uuid": "a78842fc-6c30-4fdb-bbca-d7ab14b97df2"
+            }
+          ]
+        },
+        {
+          "uuid": "a78842fc-6c30-4fdb-bbca-d7ab14b97df2",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Tafadhali andika jina lako hapa chini",
+              "type": "send_msg",
+              "all_urns": false,
+              "quick_replies": [],
+              "uuid": "47f343de-0df0-474f-ae5b-8a1f08644007"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "3eb12c96-dac3-43e9-95fa-054bbd2374fe",
+              "destination_uuid": "c656c2b5-c960-4c0e-8d3a-196478ff91e1"
+            }
+          ]
+        },
+        {
+          "uuid": "c656c2b5-c960-4c0e-8d3a-196478ff91e1",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "f78b412d-0a99-4ce6-adb5-94b73b8c9f54",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "f78b412d-0a99-4ce6-adb5-94b73b8c9f54",
+                "name": "All Responses",
+                "exit_uuid": "e587c5e3-54a9-42d3-9049-83aead200206"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Name "
+          },
+          "exits": [
+            {
+              "uuid": "e587c5e3-54a9-42d3-9049-83aead200206",
+              "destination_uuid": "2d882698-5a11-4cdd-8782-12ebd97fd1e0"
+            }
+          ]
+        },
+        {
+          "uuid": "2d882698-5a11-4cdd-8782-12ebd97fd1e0",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Tafadhali @results.name ingiza namba yako ya NIDA ",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "612a1eb3-c5ff-4ed0-925f-7875ddebcb4a"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "9e8fea6e-554f-4fda-b2c3-1706c185f459",
+              "destination_uuid": "6d5fb4e5-54f4-469b-b897-c878a0e268f8"
+            }
+          ]
+        },
+        {
+          "uuid": "6d5fb4e5-54f4-469b-b897-c878a0e268f8",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "71dd25b3-91f9-4a7f-ac99-f891a3b1638e",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "71dd25b3-91f9-4a7f-ac99-f891a3b1638e",
+                "name": "All Responses",
+                "exit_uuid": "73274d27-a449-4583-b6ac-61828037b3c2"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "NIDA"
+          },
+          "exits": [
+            {
+              "uuid": "73274d27-a449-4583-b6ac-61828037b3c2",
+              "destination_uuid": "7551ff93-2faa-4736-99fe-85f5026ccb06"
+            }
+          ]
+        },
+        {
+          "uuid": "7551ff93-2faa-4736-99fe-85f5026ccb06",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua namba ya chaguo husika\n1. Fanya kazi\n2. Weka kazi\n3. Pata taarifa zaidi kuhusu GigGo.",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "648e0109-fbd4-4f25-87e2-8dec713a9f22"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "d69c967b-0af0-4dfb-800d-a72eb725716c",
+              "destination_uuid": "b57d5c27-badf-4c12-adec-8b79e700db8c"
+            }
+          ]
+        },
+        {
+          "uuid": "93e128a5-2136-4356-8da1-f5a410576656",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Samahani weka chaguo sahihi.\n",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "766a7df8-7709-4e95-b40e-30bd387aadba"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "1c94831f-4c60-4d47-bc72-124b11bf5b07",
+              "destination_uuid": "7551ff93-2faa-4736-99fe-85f5026ccb06"
+            }
+          ]
+        },
+        {
+          "uuid": "b57d5c27-badf-4c12-adec-8b79e700db8c",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "4bf4b155-1fa2-44f9-8dfd-70760ae50a7e",
+            "cases": [
+              {
+                "arguments": [
+                  "1"
+                ],
+                "type": "has_number_eq",
+                "uuid": "48209ef0-7051-483a-b86a-f0956e9f478d",
+                "category_uuid": "8fbfbac6-411a-4934-a97a-b374cc87b44b"
+              },
+              {
+                "arguments": [
+                  "2"
+                ],
+                "type": "has_number_eq",
+                "uuid": "42532367-524e-444c-acd4-3ae27c086ddc",
+                "category_uuid": "296cb02a-f563-4701-be51-b2f886e20305"
+              },
+              {
+                "arguments": [
+                  "3"
+                ],
+                "type": "has_number_eq",
+                "uuid": "eeae0f77-827c-4a42-90f8-aad6bd1d549c",
+                "category_uuid": "32d22428-9b0d-4726-a921-9de45725cc3f"
+              }
+            ],
+            "categories": [
+              {
+                "uuid": "8fbfbac6-411a-4934-a97a-b374cc87b44b",
+                "name": "1",
+                "exit_uuid": "4836f52e-4082-4739-bb3c-f14b2e8be072"
+              },
+              {
+                "uuid": "296cb02a-f563-4701-be51-b2f886e20305",
+                "name": "2",
+                "exit_uuid": "d415f280-ac68-40a4-b172-30a39c3aa2a4"
+              },
+              {
+                "uuid": "32d22428-9b0d-4726-a921-9de45725cc3f",
+                "name": "3",
+                "exit_uuid": "b37a346a-5f09-4870-9a22-f8b84d811d98"
+              },
+              {
+                "uuid": "4bf4b155-1fa2-44f9-8dfd-70760ae50a7e",
+                "name": "Other",
+                "exit_uuid": "ac84f382-ce54-4a15-9826-3267afe1acfd"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Result 3"
+          },
+          "exits": [
+            {
+              "uuid": "4836f52e-4082-4739-bb3c-f14b2e8be072",
+              "destination_uuid": "f99ba96e-1238-46c1-895f-4fe1fd58c8b0"
+            },
+            {
+              "uuid": "d415f280-ac68-40a4-b172-30a39c3aa2a4",
+              "destination_uuid": "031b4224-080d-4265-ba21-b5bdc4c6c082"
+            },
+            {
+              "uuid": "b37a346a-5f09-4870-9a22-f8b84d811d98",
+              "destination_uuid": "48d37f35-8f39-4638-9d69-c34daec1c4fc"
+            },
+            {
+              "uuid": "ac84f382-ce54-4a15-9826-3267afe1acfd",
+              "destination_uuid": "93e128a5-2136-4356-8da1-f5a410576656"
+            }
+          ]
+        },
+        {
+          "uuid": "f99ba96e-1238-46c1-895f-4fe1fd58c8b0",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua namba ya Mkoa wako\n\n1. Dar es salaam.\n2. Dodoma\n3. Arusha.",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "0bdd0c7b-43b4-4e2c-ad12-73b1db59094e"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "91b3c3ef-a702-467c-b9fe-92149d2f943d",
+              "destination_uuid": "fb7a885d-ecf6-40cb-b5bb-d56adf2695b3"
+            }
+          ]
+        },
+        {
+          "uuid": "031b4224-080d-4265-ba21-b5bdc4c6c082",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua namba ya Mkoa wako\n\n1. Dar es salaam.\n2. Dodoma\n3. Arusha.",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "f82f6325-11b3-4d63-9398-7f7b1162d086"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "9440d9a6-70fa-4819-b211-054f8a335e38",
+              "destination_uuid": "3870db36-bc26-4741-9180-4c37840466a9"
+            }
+          ]
+        },
+        {
+          "uuid": "48d37f35-8f39-4638-9d69-c34daec1c4fc",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua namba ya Mkoa wako\n\n1. Dar es salaam.\n2. Dodoma\n3. Arusha.",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "80516796-47d6-4081-a88c-3a7628f7acdc"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "d51f4a74-c144-4cf8-bc00-7179f1eb0712",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "3870db36-bc26-4741-9180-4c37840466a9",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "4955f1b7-7ed6-4d99-87ac-604a53b73cd1",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "4955f1b7-7ed6-4d99-87ac-604a53b73cd1",
+                "name": "All Responses",
+                "exit_uuid": "a2ff06c1-5709-4103-aa6d-6f0ac1bdd617"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Mkoa"
+          },
+          "exits": [
+            {
+              "uuid": "a2ff06c1-5709-4103-aa6d-6f0ac1bdd617",
+              "destination_uuid": "6c982dd9-64db-4471-9b41-2241c61eac80"
+            }
+          ]
+        },
+        {
+          "uuid": "fb7a885d-ecf6-40cb-b5bb-d56adf2695b3",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "38fabc7b-ff9f-4de2-8bf2-c1f9e04d838e",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "38fabc7b-ff9f-4de2-8bf2-c1f9e04d838e",
+                "name": "All Responses",
+                "exit_uuid": "449a5b2d-ca6b-4f25-9505-33db51005f1f"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Mkoa"
+          },
+          "exits": [
+            {
+              "uuid": "449a5b2d-ca6b-4f25-9505-33db51005f1f",
+              "destination_uuid": "c985f122-7165-4f2e-a0c8-3189ab586715"
+            }
+          ]
+        },
+        {
+          "uuid": "6c982dd9-64db-4471-9b41-2241c61eac80",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua kategoria ya kazi\n1. Wafanyakazi wa ndani\n2. Wachuuzi wa mtaani\n3. Wafanyakazi wa ujenzi\n4. Wafanyakazi huria\n5. Nyingine",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "b0125cc5-2e52-4371-94dd-d3a5b913175b"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "582a26ba-8dec-4ec4-a90c-278a0371a0a9",
+              "destination_uuid": "fc4daadc-a334-4679-adb2-543b65c129d5"
+            }
+          ]
+        },
+        {
+          "uuid": "c985f122-7165-4f2e-a0c8-3189ab586715",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua kategoria ya kazi\n1. Wafanyakazi wa ndani\n2. Wachuuzi wa mtaani\n3. Wafanyakazi wa ujenzi\n4. Wafanyakazi huria\n5. Nyingine",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "27e86a55-4f5b-49e3-93da-a932d88936ab"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "55b3fa23-5d4d-48f8-9e68-afb6db5b693c",
+              "destination_uuid": "b94c98be-9649-4005-b219-5134f9a34101"
+            }
+          ]
+        },
+        {
+          "uuid": "b94c98be-9649-4005-b219-5134f9a34101",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "c09c5961-edfb-41ad-80c8-263c591178a5",
+            "cases": [
+              {
+                "arguments": [],
+                "type": "has_number",
+                "uuid": "3ee7462d-6abc-44e6-8a22-cb9770240d55",
+                "category_uuid": "f1d46519-c291-4661-9872-da36d6d500bf"
+              },
+              {
+                "arguments": [],
+                "type": "has_number",
+                "uuid": "2a65d80b-32d0-470b-a80a-4045e9453fc9",
+                "category_uuid": "cdc2851d-4bb2-4b70-b173-90e8cfc2af95"
+              },
+              {
+                "arguments": [],
+                "type": "has_number",
+                "uuid": "67a26b24-c7f6-4e89-80a3-8f70ef20d8b0",
+                "category_uuid": "29394253-87ec-4248-8a39-27a646dae5ba"
+              },
+              {
+                "arguments": [],
+                "type": "has_number",
+                "uuid": "f633d799-f54f-495d-8279-49bf4db1ad4d",
+                "category_uuid": "2c938b7d-5907-49ff-9057-552c0f977709"
+              },
+              {
+                "arguments": [],
+                "type": "has_number",
+                "uuid": "04408f1d-3b4e-4de7-b7e0-35e97ef26d17",
+                "category_uuid": "9e9f79db-0890-4ce7-8f85-7623e8bae558"
+              }
+            ],
+            "categories": [
+              {
+                "uuid": "f1d46519-c291-4661-9872-da36d6d500bf",
+                "name": "1",
+                "exit_uuid": "d89cce4b-9688-4b4b-abb8-f3ab0fb9aa76"
+              },
+              {
+                "uuid": "cdc2851d-4bb2-4b70-b173-90e8cfc2af95",
+                "name": "2",
+                "exit_uuid": "c1e14e39-1319-485d-bb64-388b1747e52e"
+              },
+              {
+                "uuid": "29394253-87ec-4248-8a39-27a646dae5ba",
+                "name": "3",
+                "exit_uuid": "00999c9e-d499-403d-8974-416b99ebfcdb"
+              },
+              {
+                "uuid": "2c938b7d-5907-49ff-9057-552c0f977709",
+                "name": "4",
+                "exit_uuid": "398451cb-cba8-4cef-9fcc-7cb9f382a5aa"
+              },
+              {
+                "uuid": "9e9f79db-0890-4ce7-8f85-7623e8bae558",
+                "name": "5",
+                "exit_uuid": "84145060-126f-4aab-9a4e-3e682f9682fe"
+              },
+              {
+                "uuid": "c09c5961-edfb-41ad-80c8-263c591178a5",
+                "name": "Other",
+                "exit_uuid": "7b114465-1bf6-4e3c-9d6d-f5b023f4d2ee"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Result 8"
+          },
+          "exits": [
+            {
+              "uuid": "d89cce4b-9688-4b4b-abb8-f3ab0fb9aa76",
+              "destination_uuid": "48990b41-f4b6-4635-b362-0cef2e6196ac"
+            },
+            {
+              "uuid": "c1e14e39-1319-485d-bb64-388b1747e52e"
+            },
+            {
+              "uuid": "00999c9e-d499-403d-8974-416b99ebfcdb"
+            },
+            {
+              "uuid": "398451cb-cba8-4cef-9fcc-7cb9f382a5aa"
+            },
+            {
+              "uuid": "84145060-126f-4aab-9a4e-3e682f9682fe"
+            },
+            {
+              "uuid": "7b114465-1bf6-4e3c-9d6d-f5b023f4d2ee",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "fc4daadc-a334-4679-adb2-543b65c129d5",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "d85316fd-12db-457d-aa50-377f29250ee5",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "d85316fd-12db-457d-aa50-377f29250ee5",
+                "name": "All Responses",
+                "exit_uuid": "39ddc370-833f-426d-a2aa-ec85b1c5796e"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "kategoria"
+          },
+          "exits": [
+            {
+              "uuid": "39ddc370-833f-426d-a2aa-ec85b1c5796e",
+              "destination_uuid": "cf36e552-5477-4a92-9641-e62e2691450d"
+            }
+          ]
+        },
+        {
+          "uuid": "48990b41-f4b6-4635-b362-0cef2e6196ac",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Chagua kazi \n\n@results.kazi",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "e681d534-d83f-4a53-a514-18f037169473"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "4e03ffab-fbb2-4616-8465-20322f0344f9",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "cf36e552-5477-4a92-9641-e62e2691450d",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Taja kazi ",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "a4e18dff-d571-4803-ae42-6b39e7172854"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "78c80b0a-160e-4cfe-9ab2-8539b6855e61",
+              "destination_uuid": "af4922e9-2d36-423d-899d-0f5b75bf3f76"
+            }
+          ]
+        },
+        {
+          "uuid": "af4922e9-2d36-423d-899d-0f5b75bf3f76",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "0e92ebf0-e60e-4718-b0d1-13fbbaba4807",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "0e92ebf0-e60e-4718-b0d1-13fbbaba4807",
+                "name": "All Responses",
+                "exit_uuid": "13026982-4c2f-47b3-a0d1-7bfb25d3f4fe"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Kazi"
+          },
+          "exits": [
+            {
+              "uuid": "13026982-4c2f-47b3-a0d1-7bfb25d3f4fe",
+              "destination_uuid": "db6abc59-8697-4df8-ae06-86fce0d53b2e"
+            }
+          ]
+        },
+        {
+          "uuid": "db6abc59-8697-4df8-ae06-86fce0d53b2e",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Maelezo mafupi kuhusu kazi (Sifa za mfanyakazi, Muda wa kazi, Uzoefu wa mfanyakazi)",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "2598f8a7-69b9-47fd-887e-696d87375865"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "d2233b20-b643-4a76-b3c8-f4a38b315fc5",
+              "destination_uuid": "8a40167b-3610-4555-b225-283e9969dd32"
+            }
+          ]
+        },
+        {
+          "uuid": "8a40167b-3610-4555-b225-283e9969dd32",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "0d86bdb0-63ec-4d09-9676-d69655295d88",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "0d86bdb0-63ec-4d09-9676-d69655295d88",
+                "name": "All Responses",
+                "exit_uuid": "98ac461e-6141-4d1d-950e-b7061b1c86ea"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Sifa"
+          },
+          "exits": [
+            {
+              "uuid": "98ac461e-6141-4d1d-950e-b7061b1c86ea",
+              "destination_uuid": "019e186d-6006-4cd9-aa3a-5830776ebdfe"
+            }
+          ]
+        },
+        {
+          "uuid": "019e186d-6006-4cd9-aa3a-5830776ebdfe",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "Malipo",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "a383b953-1a97-49fa-ae97-002a8171cd6b"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "45291f94-c283-4ad1-ba9a-59d184c4a5af",
+              "destination_uuid": "18087915-cb3d-42ba-917e-dd145bf4d91b"
+            }
+          ]
+        },
+        {
+          "uuid": "18087915-cb3d-42ba-917e-dd145bf4d91b",
+          "actions": [],
+          "router": {
+            "type": "switch",
+            "default_category_uuid": "6609c3a6-bbcd-4029-909c-c5ca01a58a45",
+            "cases": [],
+            "categories": [
+              {
+                "uuid": "6609c3a6-bbcd-4029-909c-c5ca01a58a45",
+                "name": "All Responses",
+                "exit_uuid": "dde55d2f-c23e-4d15-96fd-37234bf375a9"
+              }
+            ],
+            "operand": "@input.text",
+            "wait": {
+              "type": "msg"
+            },
+            "result_name": "Malipo"
+          },
+          "exits": [
+            {
+              "uuid": "dde55d2f-c23e-4d15-96fd-37234bf375a9",
+              "destination_uuid": null
+            }
+          ]
+        }
+      ],
+      "_ui": {
+        "nodes": {
+          "80c850e0-566f-4c7e-90ef-1be817d92eba": {
+            "position": {
+              "left": 0,
+              "top": 0
+            },
+            "type": "execute_actions"
+          },
+          "a78842fc-6c30-4fdb-bbca-d7ab14b97df2": {
+            "position": {
+              "left": 60,
+              "top": 280
+            },
+            "type": "execute_actions"
+          },
+          "c656c2b5-c960-4c0e-8d3a-196478ff91e1": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 20,
+              "top": 460
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "2d882698-5a11-4cdd-8782-12ebd97fd1e0": {
+            "position": {
+              "left": 140,
+              "top": 620
+            },
+            "type": "execute_actions"
+          },
+          "6d5fb4e5-54f4-469b-b897-c878a0e268f8": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 60,
+              "top": 800
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "7551ff93-2faa-4736-99fe-85f5026ccb06": {
+            "position": {
+              "left": 100,
+              "top": 1000
+            },
+            "type": "execute_actions"
+          },
+          "93e128a5-2136-4356-8da1-f5a410576656": {
+            "position": {
+              "left": 620,
+              "top": 1000
+            },
+            "type": "execute_actions"
+          },
+          "b57d5c27-badf-4c12-adec-8b79e700db8c": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 40,
+              "top": 1220
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "f99ba96e-1238-46c1-895f-4fe1fd58c8b0": {
+            "position": {
+              "left": 0,
+              "top": 1440
+            },
+            "type": "execute_actions"
+          },
+          "031b4224-080d-4265-ba21-b5bdc4c6c082": {
+            "position": {
+              "left": 360,
+              "top": 1440
+            },
+            "type": "execute_actions"
+          },
+          "48d37f35-8f39-4638-9d69-c34daec1c4fc": {
+            "position": {
+              "left": 720,
+              "top": 1440
+            },
+            "type": "execute_actions"
+          },
+          "3870db36-bc26-4741-9180-4c37840466a9": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 360,
+              "top": 1660
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "fb7a885d-ecf6-40cb-b5bb-d56adf2695b3": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 0,
+              "top": 1680
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "6c982dd9-64db-4471-9b41-2241c61eac80": {
+            "position": {
+              "left": 360,
+              "top": 1820
+            },
+            "type": "execute_actions"
+          },
+          "c985f122-7165-4f2e-a0c8-3189ab586715": {
+            "position": {
+              "left": 0,
+              "top": 1840
+            },
+            "type": "execute_actions"
+          },
+          "b94c98be-9649-4005-b219-5134f9a34101": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 920,
+              "top": 2040
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "fc4daadc-a334-4679-adb2-543b65c129d5": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 340,
+              "top": 2080
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "48990b41-f4b6-4635-b362-0cef2e6196ac": {
+            "position": {
+              "left": 640,
+              "top": 2200
+            },
+            "type": "execute_actions"
+          },
+          "cf36e552-5477-4a92-9641-e62e2691450d": {
+            "position": {
+              "left": 360,
+              "top": 2260
+            },
+            "type": "execute_actions"
+          },
+          "af4922e9-2d36-423d-899d-0f5b75bf3f76": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 360,
+              "top": 2400
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "db6abc59-8697-4df8-ae06-86fce0d53b2e": {
+            "position": {
+              "left": 340,
+              "top": 2560
+            },
+            "type": "execute_actions"
+          },
+          "8a40167b-3610-4555-b225-283e9969dd32": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 360,
+              "top": 2720
+            },
+            "config": {
+              "cases": {}
+            }
+          },
+          "019e186d-6006-4cd9-aa3a-5830776ebdfe": {
+            "position": {
+              "left": 340,
+              "top": 2900
+            },
+            "type": "execute_actions"
+          },
+          "18087915-cb3d-42ba-917e-dd145bf4d91b": {
+            "type": "wait_for_response",
+            "position": {
+              "left": 360,
+              "top": 3040
+            },
+            "config": {
+              "cases": {}
+            }
+          }
+        }
+      },
+      "revision": 59,
+      "expire_after_minutes": 43200,
+      "localization": {}
+    }
+  ],
+  "campaigns": [],
+  "triggers": [
+    {
+      "trigger_type": "K",
+      "flow": {
+        "uuid": "732c602e-0780-4c29-8b34-8ab8a348ce2d",
+        "name": "GigGo"
+      },
+      "groups": [],
+      "exclude_groups": [],
+      "keyword": "kazi",
+      "match_type": "F"
+    }
+  ],
+  "fields": [],
+  "groups": []
+}
